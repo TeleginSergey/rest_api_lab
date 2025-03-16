@@ -106,7 +106,7 @@ curl -X PUT http://localhost:9080/groups/1/title/BestFriends
 
 #### Удалить группу
 ```bash
-Удалить группу
+curl -X DELETE http://localhost:9080/groups/1
 ```
 
 ## Проблемы и решения
