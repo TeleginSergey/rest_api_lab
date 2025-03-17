@@ -23,6 +23,6 @@ WORKDIR /myrestapi
 
 COPY --from=builder /myapp/app ./
 
-EXPOSE 9080
+EXPOSE 6080
 
 CMD ["./app"] 
