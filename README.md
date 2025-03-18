@@ -36,7 +36,7 @@ docker compose up --build
 
 ## Использование API
 
-API доступен на порту `9080`. Ниже приведены примеры запросов с использованием `curl`.
+API доступен на порту `8080`. Ниже приведены примеры запросов с использованием `curl`.
 
 ---
 
@@ -45,12 +45,12 @@ API доступен на порту `9080`. Ниже приведены при�
 #### Получить все контакты
 
 ```bash
-curl -X GET http://localhost:9080/contacts
+curl -X GET http://localhost:8080/contacts
 ```
 
 #### Создать новый контакт
 ```bash
-curl -X POST http://localhost:9080/contacts \
+curl -X POST http://localhost:8080/contacts \
 -H "Content-Type: application/json" \
 -d '{
     "id": 3,
@@ -72,24 +72,24 @@ curl -X POST http://localhost:9080/contacts \
 
 #### Обновить контакт
 ```bash
-curl -X PUT http://localhost:9080/contacts/1/username/johndoe_new
+curl -X PUT http://localhost:8080/contacts/1/username/johndoe_new
 ```
 
 #### Удалить контакт
 ```bash
-curl -X DELETE http://localhost:9080/contacts/1
+curl -X DELETE http://localhost:8080/contacts/1
 ```
 
 ### Группы
 
 #### Получить все группы
 ```bash
-curl -X GET http://localhost:9080/groups
+curl -X GET http://localhost:8080/groups
 ```
 
 #### Создать новую группу
 ```bash
-curl -X POST http://localhost:9080/group \
+curl -X POST http://localhost:8080/groups \
 -H "Content-Type: application/json" \
 -d '{
     "id": 2,
@@ -101,12 +101,12 @@ curl -X POST http://localhost:9080/group \
 
 #### Обновить группу
 ```bash
-curl -X PUT http://localhost:9080/groups/1/title/BestFriends
+curl -X PUT http://localhost:8080/groups/1/title/BestFriends
 ```
 
 #### Удалить группу
 ```bash
-curl -X DELETE http://localhost:9080/groups/1
+curl -X DELETE http://localhost:8080/groups/1
 ```
 
 ## Проблемы и решения
@@ -114,7 +114,7 @@ curl -X DELETE http://localhost:9080/groups/1
 Если порт 9080 уже занят, выполните следующие шаги:
 1. Найдите процесс, занимающий порт:
 ```bash
-lsof -i :9080
+lsof -i :8080
 ```
 2. Завершите процесс:
 ```bash

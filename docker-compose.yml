@@ -1,11 +1,30 @@
 version: '3.8'
 
 services:
-  myrestapi:
+  myrestapi-1:
     build:
       context: . 
       dockerfile: Dockerfile 
-    ports:
-      - "6080:6080"
     env_file:
       - .env
+  
+  myrestapi-2:
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    env_file:
+      - .env
+  
+  myrestapi-3:
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    env_file:
+      - .env
+  
+  balancer:
+    image: nginx:alpine3.21
+    volumes:
+      - ./nginx:/etc/nginx/templates
+    ports:
+      - "8080:80"

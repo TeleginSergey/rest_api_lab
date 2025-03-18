@@ -15,7 +15,7 @@ func main() {
 	router.GET("/groups", handlers.GetGroups)
 
 	router.POST("/contacts", handlers.PostContact)
-	router.POST("/group", handlers.PostGroup)
+	router.POST("/groups", handlers.PostGroup)
 
 	router.PUT("/contacts/:id/:key/:value", handlers.UpdateContact)
 	router.PUT("/groups/:id/:key/:value", handlers.UpdateGroup)

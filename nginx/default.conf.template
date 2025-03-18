@@ -1,0 +1,14 @@
+upstream myapp1 {
+    least_conn;
+    server myrestapi-1:6080;
+    server myrestapi-2:6080;
+    server myrestapi-3:6080;
+}
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://myapp1;
+    }
+}
