@@ -25,4 +25,4 @@ COPY --from=builder /myapp/app ./
 
 EXPOSE 6080
 
-CMD ["./app"] 
+CMD ["/myrestapi/app"] 

@@ -1,5 +1,4 @@
-upstream myapp1 {
-    least_conn;
+upstream myrestapi {
     server myrestapi-1:6080;
     server myrestapi-2:6080;
     server myrestapi-3:6080;
@@ -8,7 +7,18 @@ upstream myapp1 {
 server {
     listen 80;
 
-    location / {
-        proxy_pass http://myapp1;
+    location ~ ^/(contacts|groups)/ {
+        if ($request_method ~ ^(PUT|DELETE)$) {
+            proxy_pass http://myrestapi-3:6080;
+        }
+        proxy_pass http://myrestapi;
+    }
+
+    location /contacts {
+        proxy_pass http://myrestapi-2:6080;
+    }
+
+    location /groups {
+        proxy_pass http://myrestapi-1:6080;
     }
 }

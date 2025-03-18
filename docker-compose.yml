@@ -24,7 +24,7 @@ services:
   
   balancer:
     image: nginx:alpine3.21
-    volumes:
-      - ./nginx:/etc/nginx/templates
     ports:
       - "8080:80"
+    volumes:
+      - ./nginx:/etc/nginx/templates
